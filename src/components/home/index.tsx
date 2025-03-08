@@ -38,7 +38,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 560);
     };
 
     checkIfMobile();
@@ -59,18 +59,18 @@ const HomePage = () => {
     console.log("x", x, "y", y);
 
     if (!isMobile) {
-      if (x > 0 && y > 200 && y < 400) {
+      if (x > 980 && x<1150 && y > 300 && y < 450) {
         console.log("Opening Mint Modal");
         setIsMintModalOpen(true);
-      } else if (x > 0 && y > 400 && y < 1000) {
+      } else if (x > 950 && x<1200 && y > 480 && y < 1000) {
         console.log("Opening Send Modal");
         setSendModalOpen(true);
       }
     } else {
-      if (x > 0 && y > 200 && y < 480) {
+      if (x > 250 && y > 200 && y > 370 && y < 450) {
         console.log("Opening Mint Modal on Mobile");
         setIsMintModalOpen(true);
-      } else if (x > 0 && y > 480) {
+      } else if (x > 240 && y > 500 && y < 780) {
         console.log("Opening Send Modal on Mobile");
         setSendModalOpen(true);
       }
@@ -224,13 +224,13 @@ const HomePage = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className="size-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18 18 6M6 6l12 12"
                   />
                 </svg>
@@ -302,7 +302,7 @@ const HomePage = () => {
               )}
             </div>
           )}
-         
+
           {sendModalOpen && showMessageForm && isMessageSent && (
             <ModalCard
               onClose={handleCloseSendModal}
